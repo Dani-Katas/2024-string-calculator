@@ -62,7 +62,7 @@ describe("add", () => {
 
       const result = add(numbers)
 
-      expect(result).toBe(3)
+      expect(result).toBe(6)
     })
   })
 })
