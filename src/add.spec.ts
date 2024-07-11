@@ -27,4 +27,14 @@ describe("add", () => {
       expect(result).toBe(3)
     })
   });
+
+  describe("iteration 2", () => {
+    it("sums an arbitrary amount of numbers", () => {
+      const numbers = "1,2,3,4,5"
+
+      const result = add(numbers)
+
+      expect(result).toBe(15)
+    });
+  });
 })
