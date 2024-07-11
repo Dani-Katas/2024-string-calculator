@@ -1,10 +1,16 @@
 const sum = (a: number, b: number) => a + b
 
+const hasCustomDelimiter = (numbers: string) => numbers.startsWith("//")
+
+const parseDelimiter = (numbers: string) => numbers.substring(2, 3)
+
+const parseNumbersWithCustomDelimiter = (numbers: string) => numbers.substring(4)
+
 export function add(numbers: string, delimiter = ","): number {
-  if (numbers.startsWith("//")) {
-    const alternateNumberList = numbers.substring(4)
-    const delimiter = numbers.substring(2, 3)
-    return add(alternateNumberList, delimiter)
+  if (hasCustomDelimiter(numbers)) {
+    const delimiter = parseDelimiter(numbers)
+    const numbersWithCustomDelimiter = parseNumbersWithCustomDelimiter(numbers)
+    return add(numbersWithCustomDelimiter, delimiter)
   }
 
   const numberList = numbers.replaceAll("\n", delimiter).split(delimiter)
