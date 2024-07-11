@@ -47,4 +47,14 @@ describe("add", () => {
       expect(result).toBe(6)
     })
   })
+
+  describe("iteration 4", () => {
+    it("support different delimiters", () => {
+      const numbers = "//;\n1;2"
+
+      const result = add(numbers)
+
+      expect(result).toBe(3)
+    });
+  })
 })
