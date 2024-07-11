@@ -64,5 +64,13 @@ describe("add", () => {
 
       expect(result).toBe(6)
     })
+
+    it("supports other delimiters", () => {
+      const numbers = "//.\n1.2"
+
+      const result = add(numbers)
+
+      expect(result).toBe(3)
+    })
   })
 })
