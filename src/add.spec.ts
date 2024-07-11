@@ -49,8 +49,8 @@ describe("add", () => {
   })
 
   describe("iteration 4", () => {
-    it("support different delimiters", () => {
-      const numbers = "//;\n1;2"
+    it.each([[";"], ["."]])("supports %s as delimiter", (delimiter) => {
+      const numbers = `//${delimiter}\n1${delimiter}2`
 
       const result = add(numbers)
 
@@ -63,14 +63,6 @@ describe("add", () => {
       const result = add(numbers)
 
       expect(result).toBe(6)
-    })
-
-    it("supports other delimiters", () => {
-      const numbers = "//.\n1.2"
-
-      const result = add(numbers)
-
-      expect(result).toBe(3)
     })
   })
 })
