@@ -73,6 +73,10 @@ describe("add", () => {
       expect(() => add(numbers)).toThrowError("negatives not allowed: -2")
     })
 
-    it.todo("throws an error when multiple negative numbers are provided")
+    it("throws an error when multiple negative numbers are provided", () => {
+      const numbers = "1,-2,-3,4"
+
+      expect(() => add(numbers)).toThrowError("negatives not allowed: -2, -3")
+    })
   })
 })
