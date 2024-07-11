@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { add } from "./add.js";
+import { describe, expect, it } from "vitest"
+import { add } from "./add.js"
 
 describe("add", () => {
   describe("iteration 1", () => {
@@ -26,7 +26,7 @@ describe("add", () => {
 
       expect(result).toBe(3)
     })
-  });
+  })
 
   describe("iteration 2", () => {
     it("sums an arbitrary amount of numbers", () => {
@@ -35,11 +35,11 @@ describe("add", () => {
       const result = add(numbers)
 
       expect(result).toBe(15)
-    });
-  });
+    })
+  })
 
   describe("iteration 3", () => {
-    it('admits a new line separator', () => {
+    it("admits a new line separator", () => {
       const numbers = "1\n2,3"
 
       const result = add(numbers)
@@ -55,6 +55,14 @@ describe("add", () => {
       const result = add(numbers)
 
       expect(result).toBe(3)
-    });
+    })
+
+    it("support different delimiters and admits a new line separator", () => {
+      const numbers = "//;\n1;2\n3"
+
+      const result = add(numbers)
+
+      expect(result).toBe(3)
+    })
   })
 })
