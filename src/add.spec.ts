@@ -18,5 +18,11 @@ describe("add", () => {
     expect(result).toBe(1)
   })
 
-  it.todo("returns the sum of two numbers")
+  it("returns the sum of two numbers", () => {
+    const numbers = "1,2"
+
+    const result: number = add(numbers)
+
+    expect(result).toBe(3)
+  })
 })
