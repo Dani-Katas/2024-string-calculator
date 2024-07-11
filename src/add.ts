@@ -1,9 +1,11 @@
 export function add(numbers: string): number {
 
   if (numbers.length > 1) {
-    const [a, b] = numbers.split(",");
+    const numberList = numbers.split(",");
 
-    return Number(a) + Number(b);
+    return numberList.reduce((amount, number) => 
+      amount + Number(number), 0
+    )
   }
 
   return Number(numbers);
