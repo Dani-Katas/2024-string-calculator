@@ -1,9 +1,11 @@
-export function add(numbers: string): number {
-    const numberList = numbers
-      .replaceAll("\n", ",")
-      .split(",");
+const sum = (a: number, b: number) => a + b;
 
-    return numberList.reduce((amount, number) =>
-      amount + Number(number), 0
-    )
+export function add(numbers: string): number {
+  const numberList = numbers
+    .replaceAll("\n", ",")
+    .split(",");
+
+  return numberList
+    .map(Number)
+    .reduce(sum, 0);
 }
