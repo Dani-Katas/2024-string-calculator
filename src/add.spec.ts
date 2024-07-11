@@ -10,7 +10,13 @@ describe("add", () => {
     expect(result).toBe(0)
   })
 
-  it.todo("returns the number when one number")
+  it("returns the number when one number", () => {
+    const numbers = "1"
+
+    const result: number = add(numbers)
+
+    expect(result).toBe(1)
+  })
 
   it.todo("returns the sum of two numbers")
 })
