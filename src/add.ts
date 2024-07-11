@@ -6,6 +6,10 @@ const parseDelimiter = (numbers: string) => numbers.substring(2, 3)
 
 const parseNumbersWithCustomDelimiter = (numbers: string) => numbers.substring(4)
 
+function selectNegatives(parsedNumbers: number[]) {
+  return parsedNumbers.filter((n) => n < 0)
+}
+
 export function add(numbers: string, delimiter = ","): number {
   if (hasCustomDelimiter(numbers)) {
     const delimiter = parseDelimiter(numbers)
@@ -16,7 +20,7 @@ export function add(numbers: string, delimiter = ","): number {
   const numberList = numbers.replaceAll("\n", delimiter).split(delimiter)
   const parsedNumbers = numberList.map(Number)
 
-  const negatives = parsedNumbers.filter((n) => n < 0)
+  const negatives = selectNegatives(parsedNumbers)
   if (negatives.length > 0) {
     throw new Error("negatives not allowed: " + negatives.join(", "))
   }
