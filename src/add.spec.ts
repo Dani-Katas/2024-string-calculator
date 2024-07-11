@@ -37,4 +37,14 @@ describe("add", () => {
       expect(result).toBe(15)
     });
   });
+
+  describe("iteration 3", () => {
+    it('admits a new line separator', () => {
+      const numbers = "1\n2,3"
+
+      const result = add(numbers)
+
+      expect(result).toBe(6)
+    })
+  })
 })
