@@ -65,4 +65,14 @@ describe("add", () => {
       expect(result).toBe(6)
     })
   })
+
+  describe("iteration 5", () => {
+    it("throws an error when a negative number is provided", () => {
+      const numbers = "-2"
+
+      expect(() => add(numbers)).toThrowError("negatives not allowed: -2")
+    })
+
+    it.todo("throws an error when multiple negative numbers are provided")
+  })
 })
