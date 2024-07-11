@@ -16,8 +16,9 @@ export function add(numbers: string, delimiter = ","): number {
   const numberList = numbers.replaceAll("\n", delimiter).split(delimiter)
   const parsedNumbers = numberList.map(Number)
 
-  if (parsedNumbers[0] < 0) {
-    throw new Error("negatives not allowed: " + parsedNumbers[0])
+  const negatives = parsedNumbers.filter((n) => n < 0)
+  if (negatives.length > 0) {
+    throw new Error("negatives not allowed: " + negatives.join(", "))
   }
 
   return parsedNumbers.reduce(sum, 0)
