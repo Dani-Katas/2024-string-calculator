@@ -13,6 +13,10 @@ export function add(numbers: string, delimiter = ","): number {
     return add(numbersWithCustomDelimiter, delimiter)
   }
 
+  if (numbers.startsWith("-")) {
+    throw new Error("negatives not allowed: " + numbers)
+  }
+
   const numberList = numbers.replaceAll("\n", delimiter).split(delimiter)
 
   return numberList.map(Number).reduce(sum, 0)
