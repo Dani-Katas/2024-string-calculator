@@ -1,4 +1,4 @@
-export function add(numbers: string) {
+export function add(numbers: string): number {
 
   if (numbers.length > 1) {
     const [a, b] = numbers.split(",");

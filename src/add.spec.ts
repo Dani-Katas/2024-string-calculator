@@ -5,7 +5,7 @@ describe("add", () => {
   it("returns zero when empty string", () => {
     const numbers = ""
 
-    const result: number = add(numbers)
+    const result = add(numbers)
 
     expect(result).toBe(0)
   })
@@ -13,7 +13,7 @@ describe("add", () => {
   it("returns the number when one number", () => {
     const numbers = "1"
 
-    const result: number = add(numbers)
+    const result = add(numbers)
 
     expect(result).toBe(1)
   })
@@ -21,7 +21,7 @@ describe("add", () => {
   it("returns the sum of two numbers", () => {
     const numbers = "1,2"
 
-    const result: number = add(numbers)
+    const result = add(numbers)
 
     expect(result).toBe(3)
   })
