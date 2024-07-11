@@ -1,13 +1,12 @@
 const sum = (a: number, b: number) => a + b
 
-export function add(numbers: string): number {
+export function add(numbers: string, delimiter = ","): number {
   if (numbers.startsWith("//")) {
     const alternateNumberList = numbers.substring(4)
-    const finalAlternateNumberList = alternateNumberList.replaceAll("\n", ";").split(";")
-    return finalAlternateNumberList.map(Number).reduce(sum, 0)
+    return add(alternateNumberList, ";")
   }
 
-  const numberList = numbers.replaceAll("\n", ",").split(",")
+  const numberList = numbers.replaceAll("\n", delimiter).split(delimiter)
 
   return numberList.map(Number).reduce(sum, 0)
 }
